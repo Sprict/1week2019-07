@@ -24,7 +24,7 @@ public class Panel : ScriptableObject
 	private List<int> maxItemValue = new List<int>();
 	private Dictionary<Item, int> maxOfItem = new Dictionary<Item, int>();
 
-	public Panel()
+	public void Initialize()
 	{
 		for (int i = 0; i < itemLists.Count; i++)
 		{

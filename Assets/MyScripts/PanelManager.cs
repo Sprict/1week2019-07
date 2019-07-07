@@ -23,11 +23,6 @@ public class PanelManager : MonoBehaviour
 		image[1].sprite = selectedPanel.GetImage();
 		itemList = selectedPanel.GetItemLists();
 		int requiredTime = selectedPanel.GetRequiredTime();
-		Dictionary<Item, int> maxOfItem = new Dictionary<Item, int>();
-		maxOfItem = selectedPanel.GetMaxOfItem();
-		// Debug.Log(maxOfItem[itemList[0]]);
-		Debug.Log(itemList[0]);
-		Debug.Log(itemList[1]);
 
 		targettext.text = "所要時間：\n\t" + requiredTime + "年"
 						+ "\n手に入るアイテム：";
@@ -48,22 +43,24 @@ public class PanelManager : MonoBehaviour
 	// PanelDataBaseからランダムなPanelを返す
 	public Panel GetRandomPanel()
 	{
-		Debug.Log(PanelDataBase.GetPanelLists()[0]);
-		int random = Random.Range(0, PanelDataBase.GetPanelLists().Count - 1);
+		// Debug.Log(PanelDataBase.GetPanelLists()[0]);
+		int random = Random.Range(0, PanelDataBase.GetPanelLists().Count);
 		Panel selectedPanel = PanelDataBase.GetPanelLists()[random];
-
+		selectedPanel.Initialize();
 		return selectedPanel;
 	}
 
 	public void RandomAddMaxOfItem()
 	{
+		foreach (Item Key in selectedPanel.GetMaxOfItem().Keys)
+		{
+			Debug.Log(Key);
+		}
 		foreach (Item item in itemList)
 		{
-			Debug.Log("hello");
 			int gotItemNum = Random.Range(0, selectedPanel.GetMaxOfItem()[item]);
 			selectedPanel.AddMaxOfItem(item, gotItemNum);
 			Debug.Log(selectedPanel.GetMaxOfItem()[item]);
 		}
-		Debug.Log("endevent");
 	}
 }

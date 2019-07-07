@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d66a955c64ca640aaaee122f7e3d26ba, type: 3}
-  m_Name: Panel2
+  m_Name: Panel7
   m_EditorClassIdentifier: 
-  image: {fileID: -4275309223819975328, guid: afb94c604780df743961fa54e093c366, type: 3}
-  panelName: "\u68EE"
-  requiredTime: 1
+  image: {fileID: -4057345115418029420, guid: afb94c604780df743961fa54e093c366, type: 3}
+  panelName: "\u706B\u5C71"
+  requiredTime: 8
+  itemLists:
+  - {fileID: 11400000, guid: 70d859ce2cddf4c71bc4f2c1f51535f7, type: 2}
+  maxItemValue: 01000000

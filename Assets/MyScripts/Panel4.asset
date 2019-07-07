@@ -15,3 +15,6 @@ MonoBehaviour:
   image: {fileID: 7689790166670359814, guid: cea014bbbcf8d4f4daa5438b694e9bd4, type: 3}
   panelName: "\u6E56"
   requiredTime: 2
+  itemLists:
+  - {fileID: 11400000, guid: 70d859ce2cddf4c71bc4f2c1f51535f7, type: 2}
+  maxItemValue: 01000000
