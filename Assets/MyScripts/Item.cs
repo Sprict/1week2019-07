@@ -29,7 +29,8 @@ public class Item : ScriptableObject
 
 	[SerializeField]
 
-	private uint itemNumber;
+	// 所持しているアイテムの数
+	private uint itemNumber = 0;
 	public KindOfItem GetKindOfItem()
 	{
 		return kindOfItem;
@@ -53,5 +54,10 @@ public class Item : ScriptableObject
 	public uint GetItemNumber()
 	{
 		return itemNumber;
+	}
+
+	public void SetItemNumber(uint i)
+	{
+		itemNumber = i;
 	}
 }

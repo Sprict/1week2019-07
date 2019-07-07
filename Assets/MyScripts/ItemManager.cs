@@ -34,4 +34,9 @@ public class ItemManager : MonoBehaviour
 	{
 		return itemDataBase.GetItemLists().Find(itemName => itemName.GetItemName() == searchName);
 	}
+
+	public void touchedpanel(Panel panel)
+	{
+
+	}
 }

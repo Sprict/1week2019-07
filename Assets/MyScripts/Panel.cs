@@ -17,9 +17,21 @@ public class Panel : ScriptableObject
 	//　所要時間
 	[SerializeField]
 	private int requiredTime;
-	//　所得できる素材リスト
+	//　手に入る素材リスト
+	[SerializeField]
 	private List<Item> itemLists = new List<Item>();
+	[SerializeField]
+	private List<int> maxItemValue = new List<int>();
+	private Dictionary<Item, int> maxOfItem = new Dictionary<Item, int>();
 
+	public Panel()
+	{
+		for (int i = 0; i < itemLists.Count; i++)
+		{
+			//　アイテム数を適当に設定
+			maxOfItem.Add(itemLists[i], maxItemValue[i]);
+		}
+	}
 	public Sprite GetImage()
 	{
 		return image;
@@ -39,4 +51,20 @@ public class Panel : ScriptableObject
 	{
 		return itemLists;
 	}
+
+	public Dictionary<Item, int> GetMaxOfItem()
+	{
+		return maxOfItem;
+	}
+
+	public void AddMaxOfItem(Item item, int i)
+	{
+		maxOfItem[item] += i;
+	}
+
+	public void SubMaxOfItem(Item item, int i)
+	{
+		maxOfItem[item] -= i;
+	}
+
 }
