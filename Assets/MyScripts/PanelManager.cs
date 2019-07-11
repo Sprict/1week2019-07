@@ -32,6 +32,9 @@ public class PanelManager : MonoBehaviour
 			targettext.text += "\n\t" + item.GetItemName();
 		});
 
+
+		// ValuesのDictionaryを初期化する
+
 	}
 
 	//　名前でパネルを取得
@@ -59,8 +62,7 @@ public class PanelManager : MonoBehaviour
 		foreach (Item item in itemList)
 		{
 			int gotItemNum = Random.Range(0, selectedPanel.GetMaxOfItem()[item]);
-			selectedPanel.AddMaxOfItem(item, gotItemNum);
-			Debug.Log(selectedPanel.GetMaxOfItem()[item]);
+			Values.values.Add;
 		}
 	}
 }
